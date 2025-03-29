@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2b2b2b;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #3776ab;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffde57;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        nav ul li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffde57;
+        }
+        .doc-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+        }
+        .sidebar {
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            padding: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        .sidebar h3 {
+            color: #ffde57;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 8px 10px;
+            border-radius: 4px;
+        }
+        .sidebar ul li a:hover, .sidebar ul li a.active {
+            color: #ffde57;
+            background-color: #333333;
+        }
+        .content {
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            padding: 40px;
+        }
+        .content h1 {
+            color: #ffde57;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        .content h2 {
+            color: #ffde57;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .content p {
+            margin-bottom: 20px;
+        }
+        .content code {
+            background-color: #333333;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .code-block {
+            background-color: #333333;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 20px 0;
+            overflow: auto;
+        }
+        footer {
+            background-color: #2b2b2b;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #ffde57;
+        }
+        .copyright {
+            color: #888888;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .doc-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+                margin-bottom: 20px;
+            }
+            nav ul {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">🐍</div>
+                <div class="logo-text">Python</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#feature-details">Why Python</a></li>
+                    <li><a href="documentation.html">Documentation</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="#" id="contact-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="doc-container">
+        <div class="sidebar">
+            <h3>Documentation</h3>
+            <ul>
+                <li><a href="#getting-started" class="active">Getting Started</a></li>
+                <li><a href="#syntax">Python Syntax</a></li>
+                <li><a href="#data-types">Data Types</a></li>
+                <li><a href="#control-flow">Control Flow</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#modules">Modules & Packages</a></li>
+                <li><a href="#file-io">File I/O</a></li>
+                <li><a href="#error-handling">Error Handling</a></li>
+                <li><a href="#oop">Object-Oriented Programming</a></li>
+            </ul>
+        </div>
+        
+        <div class="content">
+            <h1>Python Documentation</h1>
+            <p>Welcome to the Python documentation. This guide will help you understand Python's features and how to use them effectively in your projects.</p>
+            
+            <h2 id="getting-started">Getting Started</h2>
+            <p>Python is a high-level, interpreted programming language known for its readability and versatility. To start using Python, you need to install it on your system.</p>
+            <p>Visit the official Python website at <a href="https://python.org" style="color: #ffde57;">python.org</a> to download the latest version for your operating system.</p>
+            
+            <p>After installation, you can verify it by opening a terminal or command prompt and typing:</p>
+            <div class="code-block">python --version</div>
+            
+            <h2 id="syntax">Python Syntax</h2>
+            <p>Python syntax is designed to be readable and straightforward. Unlike many programming languages, Python uses indentation to define code blocks.</p>
+            
+            <div class="code-block"># This is a comment
+if True:
+    print("This is indented")
+    if True:
+        print("This is indented more")
+    print("Back to the first indentation level")
+print("No indentation")</div>
+            
+            <p>Python statements typically end with a newline, though they can be extended with a backslash or within parentheses, brackets, or braces.</p>
+            
+            <h2 id="data-types">Data Types</h2>
+            <p>Python has several built-in data types:</p>
+            <ul>
+                <li><code>int</code> - Integer values like 42, -7</li>
+                <li><code>float</code> - Floating-point numbers like 3.14, -0.001</li>
+                <li><code>str</code> - Text strings like "Hello, World!"</li>
+                <li><code>bool</code> - Boolean values (True or False)</li>
+                <li><code>list</code> - Ordered, mutable collections like [1, 2, 3]</li>
+                <li><code>tuple</code> - Ordered, immutable collections like (1, 2, 3)</li>
+                <li><code>dict</code> - Key-value pairs like {"name": "John", "age": 30}</li>
+                <li><code>set</code> - Unordered collections of unique items like {1, 2, 3}</li>
+            </ul>
+            
+            <h2 id="control-flow">Control Flow</h2>
+            <p>Control flow statements determine the execution order of your code:</p>
+            
+            <div class="code-block"># If-else statement
+x = 10
+if x > 5:
+    print("x is greater than 5")
+elif x == 5:
+    print("x is equal to 5")
+else:
+    print("x is less than 5")
+
+# For loop
+for i in range(5):
+    print(i)  # Prints 0, 1, 2, 3, 4
+
+# While loop
+count = 0
+while count < 5:
+    print(count)
+    count += 1</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Blog</a>
+                <a href="#">Careers</a>
+                <a href="#">Support</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Python Software Foundation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        const modal = document.getElementById("contact-modal");
+        
+        // Get the button that opens the modal
+        const contactLink = document.getElementById("contact-link");
+        
+        // Get the <span> element that closes the modal
+        const closeButton = document.getElementsByClassName("close-button")[0];
+        
+        // When the user clicks the button, open the modal 
+        contactLink.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        closeButton.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Handle form submission
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Message sent! We'll get back to you soon.");
+            modal.style.display = "none";
+            this.reset();
+        });
+
+        // Add active class to sidebar links
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar a').forEach(item => {
+                    item.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html> 
