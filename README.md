@@ -2,6 +2,10 @@
 
 A modern, responsive landing page for Python with a dark theme design.
 
+## Live Demo
+
+View the live website here: [Python Landing Page](https://nihal27055.github.io/New-folder/)
+
 ## Overview
 
 This project is a simple yet elegant landing page for Python, featuring:
@@ -21,6 +25,7 @@ This project is a simple yet elegant landing page for Python, featuring:
 - **Responsive Design**: Adapts to different screen sizes and devices
 - **Custom Styling**: All styling is done with inline CSS for simplicity
 - **Semantic HTML**: Properly structured HTML with semantic elements
+- **Navigation**: The "Features" button in the navigation links to the features section of the page
 
 ## Preview
 
@@ -33,6 +38,8 @@ The landing page includes:
 ## Usage
 
 Simply open the `Index.html` file in any modern web browser to view the landing page.
+
+You can also visit the deployed version at: https://nihal27055.github.io/New-folder/
 
 ## Customization
 
