@@ -138,6 +138,143 @@
             color: #888888;
             font-size: 0.9rem;
         }
+        .feature-details {
+            background-color: #222222;
+            padding: 80px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .feature-details h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ffde57;
+            margin-bottom: 50px;
+        }
+        .feature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        .feature-col {
+            flex-basis: 48%;
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .feature-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+        }
+        .feature-col p {
+            color: #cccccc;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background-color: #2b2b2b;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideIn 0.4s ease-out;
+            transform: translateY(-10px) rotate(-2deg);
+        }
+        
+        @keyframes slideIn {
+            0% { transform: translateY(-50px) rotate(-5deg); opacity: 0; }
+            100% { transform: translateY(-10px) rotate(-2deg); opacity: 1; }
+        }
+        
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            transition: color 0.3s;
+        }
+        
+        .close-button:hover {
+            color: #ffde57;
+        }
+        
+        .modal-content h2 {
+            color: #ffde57;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #f0f0f0;
+        }
+        
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 4px;
+            background-color: #333;
+            color: #f0f0f0;
+            font-family: inherit;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: #3776ab;
+            outline: none;
+            box-shadow: 0 0 5px rgba(55, 118, 171, 0.5);
+        }
+        
+        .submit-btn {
+            background-color: #3776ab;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #2a5a88;
+        }
         @media (max-width: 768px) {
             nav ul {
                 gap: 15px;
@@ -147,6 +284,13 @@
             }
             .features {
                 grid-template-columns: 1fr;
+            }
+            .feature-row {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .feature-col {
+                flex-basis: 100%;
             }
         }
     </style>
@@ -162,9 +306,11 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#features">Features</a></li>
+                    <li><a href="#feature-details">Why Python</a></li>
                     <li><a href="#">Documentation</a></li>
                     <li><a href="#">Community</a></li>
                     <li><a href="#">Download</a></li>
+                    <li><a href="#" id="contact-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -192,6 +338,47 @@
             <h3>Cross-Platform</h3>
             <p>Write once, run anywhere. Python works on Windows, macOS, Linux, and many other platforms, making it truly universal.</p>
         </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Data Analysis</h3>
+            <p>With libraries like Pandas, NumPy, and Matplotlib, Python makes data analysis and visualization straightforward and efficient.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3>Machine Learning</h3>
+            <p>TensorFlow, PyTorch, and scikit-learn provide powerful tools for building state-of-the-art machine learning models.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Web Development</h3>
+            <p>Django and Flask frameworks enable rapid development of secure and scalable web applications.</p>
+        </div>
+    </section>
+
+    <section class="feature-details" id="feature-details">
+        <div class="container">
+            <h2>Why Choose Python?</h2>
+            <div class="feature-row">
+                <div class="feature-col">
+                    <h3>Easy to Learn</h3>
+                    <p>Python's syntax is designed to be intuitive and its commands mimic natural language, making it an ideal first programming language.</p>
+                </div>
+                <div class="feature-col">
+                    <h3>Large Community</h3>
+                    <p>With millions of developers worldwide, you'll find extensive resources, tutorials, and support for any challenge.</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-col">
+                    <h3>Enterprise Ready</h3>
+                    <p>Used by organizations like Google, NASA, and Instagram, Python scales from simple scripts to enterprise applications.</p>
+                </div>
+                <div class="feature-col">
+                    <h3>Future Proof</h3>
+                    <p>With continuous development and a focus on emerging technologies, Python remains at the forefront of innovation.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -209,5 +396,61 @@
             </div>
         </div>
     </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        const modal = document.getElementById("contact-modal");
+        
+        // Get the button that opens the modal
+        const contactLink = document.getElementById("contact-link");
+        
+        // Get the <span> element that closes the modal
+        const closeButton = document.getElementsByClassName("close-button")[0];
+        
+        // When the user clicks the button, open the modal 
+        contactLink.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        closeButton.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Handle form submission
+        document.getElementById("contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Message sent! We'll get back to you soon.");
+            modal.style.display = "none";
+            this.reset();
+        });
+    </script>
 </body>
 </html> 
