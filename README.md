@@ -4,7 +4,7 @@ A modern, responsive landing page for Python with a dark theme design.
 
 ## Live Demo
 
-View the live website here: [Python Landing Page](https://nihal27055.github.io/New-folder/)
+View the live website here: [Python Landing Page]( https://nihal27055.github.io/python_website/)
 
 ## Overview
 
