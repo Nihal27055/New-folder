@@ -27,6 +27,16 @@ This project is a simple yet elegant landing page for Python, featuring:
 - **Semantic HTML**: Properly structured HTML with semantic elements
 - **Navigation**: The "Features" button in the navigation links to the features section of the page
 
+## Python Features Showcased
+
+The website highlights three key features of the Python programming language:
+
+1. **Simple & Powerful** (⚡): Python's clean syntax and readability makes it an excellent language for beginners while offering powerful features for experienced developers.
+
+2. **Versatile** (🔧): From web development to data science, machine learning to automation - Python has libraries and frameworks for virtually any application.
+
+3. **Cross-Platform** (🌐): Write once, run anywhere. Python works on Windows, macOS, Linux, and many other platforms, making it truly universal.
+
 ## Preview
 
 The landing page includes:
